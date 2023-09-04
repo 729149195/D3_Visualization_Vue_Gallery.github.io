@@ -24,8 +24,8 @@ export default defineConfig({
     }
   },
   base: '/D3_BuildBy_vue.github.io/',
-  // scripts: {
-  //   "build": "vite build",
-  //   "preview": "vite preview"
-  // }
+  scripts: {
+    "build": "vite build",
+    "preview": "vite preview"
+  }
 })
