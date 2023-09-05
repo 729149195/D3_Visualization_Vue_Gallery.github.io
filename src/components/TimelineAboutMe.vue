@@ -23,7 +23,7 @@
 </el-card>
   </template>
 
-    <script lang="ts" setup>
+    <script setup>
     </script>
 
     <style scoped>

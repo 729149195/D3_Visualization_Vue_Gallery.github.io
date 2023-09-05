@@ -1,87 +1,69 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="D3 cases show!" />
-
-      <nav>
-        <RouterLink to="/">D3-Axis</RouterLink>
-        <RouterLink to="/other">Other</RouterLink>
-        <RouterLink to="/aboutme">AboutMe</RouterLink>
+  <div class="common-layout">
+    <el-container>
+      <el-header>  
+          <img src="../public/favicon.ico">
+          <span>D3 CBBV</span> 
+        <nav>
+          <RouterLink to="/vis/info"><el-button>Vis Show</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/other"><el-button>Other</el-button></RouterLink>
+          <el-divider direction="vertical" border-style="dashed" />
+          <RouterLink to="/aboutme"><el-button>About Me</el-button></RouterLink>
       </nav>
-    </div>
-  </header>
-  <RouterView />
+    </el-header>
+      <el-main>
+        <RouterView />
+      </el-main>
+      <!-- <el-footer>Footer</el-footer> -->
+    </el-container>
+  </div>
+ 
+
 </template>
 
-<style scoped>
-
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
+<style scoped lang="scss">
+.el-header{
+  display: flex;
+  align-items: center;
+  span{
   display: block;
-  margin: 0 auto 2rem;
+  margin-right: 20px;
+  font-weight: 800;
+  background-image: linear-gradient(to right , #fa0000, #e78700,#0077ff);   //最后三行为文字渐变CSS
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+  font-size: large;
+  }
+  img{
+    margin-right: 5px;
+    width: 140px;
+  }
 }
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
 
 @media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+  .el-header{
+  display: flex;
+  align-items: center;
+  div{
+    display: inline;
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
+  span{
+  margin-right: 20px;
+  font-weight: 800;
+  background-image: linear-gradient(to right , #fa0000, #e78700,#0077ff);   //最后三行为文字渐变CSS
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+  font-size: large;
   }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
+  img{
+    margin-right: 5px;
+    width: 40px;
   }
 }
+} 
 </style>

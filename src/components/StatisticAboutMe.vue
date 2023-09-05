@@ -5,12 +5,6 @@
         <el-statistic title="Daily active users" :value="268500" />
       </el-col>
       <el-col :span="6">
-        <el-statistic title="Daily active users" :value="268500" />
-      </el-col>
-      <el-col :span="6">
-        <el-statistic title="Total Transactions" :value="172000" />
-      </el-col>
-      <el-col :span="6">
         <el-statistic title="Feedback number" :value="562">
           <template #suffix>
             <el-icon style="vertical-align: -0.125em">
@@ -30,6 +24,12 @@
   <style scoped>
   .el-col {
     text-align: center;
+  
+  }
+  .el-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
   }
   .box-card{
     margin-top: 10px;
