@@ -19,5 +19,3 @@ git commit -m 'deploy'
 # 如果你要部署在 https://<USERNAME>.github.io/<REPO>
 # git push -f git@github.com:729149195/D3_BuildBy_vue.github.io.git master
 git push
-
-cd -

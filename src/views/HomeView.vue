@@ -1,9 +1,11 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import d3axis from "../components/D3-Axis.vue";
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    <div>
+      <d3axis />
+    </div>
+  </div>
 </template>
