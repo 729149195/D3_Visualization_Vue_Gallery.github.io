@@ -11,12 +11,12 @@ import HelloWorld from './components/HelloWorld.vue'
       <HelloWorld msg="D3 cases show!" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">D3-Axis</RouterLink>
+        <RouterLink to="/other">Other</RouterLink>
+        <RouterLink to="/aboutme">AboutMe</RouterLink>
       </nav>
     </div>
   </header>
-
   <RouterView />
 </template>
 
@@ -56,6 +56,7 @@ nav a {
 nav a:first-of-type {
   border: 0;
 }
+
 
 @media (min-width: 1024px) {
   header {

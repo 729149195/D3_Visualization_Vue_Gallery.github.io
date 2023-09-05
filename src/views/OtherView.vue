@@ -1,9 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is a show page</h1>
-    <h3>Here have some cases of the vis tables</h3>
-
-
+    <el-empty description="暂无资源" />
   </div>
 </template>
 

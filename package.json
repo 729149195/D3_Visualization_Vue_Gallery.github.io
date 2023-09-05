@@ -19,6 +19,8 @@
     "d3": "^7.8.5",
     "eslint": "^8.46.0",
     "eslint-plugin-vue": "^9.16.1",
+    "sass": "^1.66.1",
+    "sass-loader": "^13.3.2",
     "unplugin-auto-import": "^0.16.6",
     "unplugin-vue-components": "^0.25.2",
     "vite": "^4.4.9"

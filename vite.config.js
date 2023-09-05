@@ -23,9 +23,9 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  base: '/D3_BuildBy_vue.github.io/',
-  scripts: {
-    "build": "vite build",
-    "preview": "vite preview"
-  }
+  base: '/D3_BuildBy_vue.github.io/'
+  // scripts: {
+  //   "build": "vite build",
+  //   "preview": "vite preview"
+  // }
 })
