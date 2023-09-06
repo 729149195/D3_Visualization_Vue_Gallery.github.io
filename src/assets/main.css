@@ -8,12 +8,11 @@
   font-weight: normal; */
 /* } */
 
-/* a,
-.green {
+a {
   text-decoration: none;
   color: rgb(0, 0, 0);
   transition: 0.4s;
-} */
+}
 
 /* @media (hover: hover) {
   a:hover {
