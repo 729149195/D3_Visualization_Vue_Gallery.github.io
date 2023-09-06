@@ -3,6 +3,7 @@
       <h1>d3-axis</h1>
       <div class="content">
         <svg width="600" height="600"></svg>
+        <code></code>
         <p>tables</p>
       </div>
     </div>

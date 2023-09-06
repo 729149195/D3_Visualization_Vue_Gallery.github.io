@@ -5,7 +5,7 @@ import AllFooter from './components/AllFooter.vue';
 </script>
 
 <template>
-  <div class="common-layout">
+  <div class="App-View">
     <el-container>
       <div class="box">
        <div class="fixed">
@@ -45,6 +45,9 @@ import AllFooter from './components/AllFooter.vue';
 </template>
 
 <style scoped lang="scss">
+.el-button{
+    font-size: 10px;
+  }
 .fixed{
   position:relative;
   width: 100%;
@@ -81,14 +84,20 @@ import AllFooter from './components/AllFooter.vue';
   }
   nav{
     margin-right: 0px;
+    .el-divider--vertical{
+      margin: 4.5px;
+    }
   }
 }
 .three-divider{
-    margin: 10px 0;
+    margin: 10px;
     opacity: 0.8;
  } 
 
 @media (min-width: 1024px) {
+  .el-button{
+    font-size: 1em;
+  }
   .box{
   height: 6vh;
 }
@@ -134,6 +143,9 @@ import AllFooter from './components/AllFooter.vue';
   }
   nav{
     margin-right: 10px;
+    .el-divider--vertical{
+      margin: 0.5em;
+    }
   }
 }
   .three-divider{
