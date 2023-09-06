@@ -8,7 +8,8 @@
   font-weight: normal; */
 /* } */
 
-a {
+a,
+.green {
   text-decoration: none;
   color: rgb(0, 0, 0);
   transition: 0.4s;
