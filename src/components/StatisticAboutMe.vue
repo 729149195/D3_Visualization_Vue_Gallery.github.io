@@ -18,7 +18,7 @@
   </template>
   
   <script lang="ts" setup>
-  import { ChatLineRound} from '@element-plus/icons-vue'
+  import { ChatLineRound } from '@element-plus/icons-vue'
   </script>
   
   <style scoped>

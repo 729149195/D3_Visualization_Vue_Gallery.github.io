@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-      <div class="left">
+      <el-card class="left">
         <nav>
           <RouterLink to="/vis/d3-axis"><el-button>axis</el-button></RouterLink>
           <el-divider direction="vertical" />
@@ -52,10 +52,10 @@
           <el-divider direction="vertical" />
           <RouterLink to="/vis/d3-api"><el-button>api</el-button></RouterLink>
       </nav>
-      </div>
-      <div class="right">
+      </el-card>
+      <el-card class="right">
         <RouterView />
-      </div>
+      </el-card>
     </div>
   </template>
   
@@ -67,25 +67,47 @@ import { RouterLink, RouterView } from 'vue-router'
 <style scoped lang="scss">
 div{
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: left;
   .left{
     margin-right: 10px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
   }
   .right{
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
     height: 100vh;
     width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 }
+@media (min-width: 1024px) {
+div{
+  display: flex;
+  align-items: stretch;
+  justify-content: left;
+  .left{
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+  }
+  .right{
+    height: 100vh;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
+}
+} 
 </style>
   
