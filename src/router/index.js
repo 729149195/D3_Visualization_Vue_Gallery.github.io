@@ -6,6 +6,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      redirect: '/vis/info',
       name: 'Vis',
       component: VisView,
       children: [
@@ -142,9 +143,9 @@ const router = createRouter({
     ]
     },
     {
-      path: '/other',
-      name: 'other',
-      component: () => import('../views/OtherView.vue')
+      path: '/papers',
+      name: 'papers',
+      component: () => import('../views/PapersView.vue')
     },
     {
       path: '/aboutme',

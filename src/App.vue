@@ -10,12 +10,12 @@ import AllFooter from './components/AllFooter.vue';
       <div class="box">
        <div class="fixed">
       <el-header>
-        <img src="../public/favicon.ico">
+        <RouterLink to="/" class="logo"><img src="../public/favicon.ico"></RouterLink>
         <span class="title">D3 CBBV</span> 
         <nav>
           <RouterLink to="/vis/info"><el-button round :icon="Menu">Vis Show</el-button></RouterLink>
           <el-divider direction="vertical" />
-          <RouterLink to="/other"><el-button round :icon="StarFilled">Other</el-button></RouterLink>
+          <RouterLink to="/papers"><el-button round :icon="StarFilled">Papers</el-button></RouterLink>
           <el-divider direction="vertical" />
           <RouterLink to="/aboutme"><el-button round :icon="UserFilled">About Me</el-button></RouterLink>
       </nav>
@@ -90,11 +90,16 @@ import AllFooter from './components/AllFooter.vue';
 
 @media (min-width: 1024px) {
   .box{
-  height: 5vh;
+  height: 6vh;
 }
   .fixed{
   position: fixed;
   width: 100%;
+}
+.logo{
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
 }
   .el-header{
   display: flex;

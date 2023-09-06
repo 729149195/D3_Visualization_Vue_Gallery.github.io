@@ -54,7 +54,7 @@
       </nav>
       </el-card>
       <el-card class="right">
-        <RouterView />
+        <RouterView/>
       </el-card>
     </div>
   </template>

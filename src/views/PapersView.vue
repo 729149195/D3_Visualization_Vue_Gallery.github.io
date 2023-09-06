@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="papers">
     <el-empty description="暂无资源" />
   </div>
 </template>
@@ -12,7 +12,7 @@
 
 <style scoped>
 @media (min-width: 1024px) {
-  .about {
+  .papers {
     min-height: 100vh;
     display: flex;
     align-items: center;
