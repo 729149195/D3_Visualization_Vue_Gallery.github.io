@@ -1,4 +1,63 @@
 <template>
+  <el-button :icon="Expand" round class="expand-button" @click="drawer = true"/>
+  <el-drawer
+    v-model="drawer"
+    :direction="direction"
+    :with-header="false"
+    :size="size"
+    >
+      <nav>
+          <RouterLink to="/vis/d3-axis" @click="drawer = false"><el-button>axis</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-chord" @click="drawer = false"><el-button>chord</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-color" @click="drawer = false"><el-button>color</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-interpolate" @click="drawer = false"><el-button>interpolate</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-contour" @click="drawer = false"><el-button>contour</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-delaunay" @click="drawer = false"><el-button>delaunay</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-force" @click="drawer = false"><el-button>force</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-geo" @click="drawer = false"><el-button>geo</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-hierarchy" @click="drawer = false"><el-button>hierarchy</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-polygon" @click="drawer = false"><el-button>polygon</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-quadtree" @click="drawer = false"><el-button>quadtree</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-scale" @click="drawer = false"><el-button>scale</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-scale-chromatic" @click="drawer = false"><el-button>scale-chromatic</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-selection" @click="drawer = false"><el-button>selection</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-shape" @click="drawer = false"><el-button>shape</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-animation" @click="drawer = false"><el-button>animation</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-interaction" @click="drawer = false"><el-button>interaction</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-data" @click="drawer = false"><el-button>data</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-dsv" @click="drawer = false"><el-button>dsv</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-fetch" @click="drawer = false"><el-button>fetch</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-format" @click="drawer = false"><el-button>format</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-random" @click="drawer = false"><el-button>random</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-time" @click="drawer = false"><el-button>time</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-time-format" @click="drawer = false"><el-button>time-format</el-button></RouterLink>
+          <el-divider direction="vertical" />
+          <RouterLink to="/vis/d3-api" @click="drawer = false"><el-button>api</el-button></RouterLink>
+      </nav>
+  </el-drawer>
     <div class="content">
       <el-card class="left">
         <nav>
@@ -61,10 +120,18 @@
   
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-
+import { Expand } from '@element-plus/icons-vue'
+import { ref } from 'vue'
+const drawer = ref(false)
+const direction = ref('ltr')
+const size = ref('12em')
 </script>
 
 <style scoped lang="scss">
+.expand-button{
+  margin-bottom: 10px;
+  margin-top: -20px;
+}
 div{
   display: flex;
   align-items: stretch;
@@ -75,6 +142,7 @@ div{
     align-items: center;
     justify-content: center;
     width: 300px;
+    display: none;
   }
   .right{
     height: 100vh;
@@ -86,6 +154,11 @@ div{
   }
 }
 @media (min-width: 1024px) {
+.expand-button{
+  margin-bottom: 10px;
+  margin-top: -20px;
+  display: none;
+}
 div{
   display: flex;
   align-items: stretch;
@@ -106,7 +179,6 @@ div{
     align-items: center;
     justify-content: center;
   }
-
 }
 } 
 </style>

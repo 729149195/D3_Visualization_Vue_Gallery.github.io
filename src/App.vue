@@ -46,7 +46,7 @@ import AllFooter from './components/AllFooter.vue';
 
 <style scoped lang="scss">
 .el-button{
-    font-size: 10px;
+    font-size: 14px;
   }
 .fixed{
   position:relative;
@@ -90,7 +90,7 @@ import AllFooter from './components/AllFooter.vue';
   }
 }
 .three-divider{
-    margin: 10px;
+    margin: 10px 0 10px 0;
     opacity: 0.8;
  } 
 
