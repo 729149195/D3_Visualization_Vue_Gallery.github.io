@@ -25,7 +25,7 @@ d3.select('.d3-Interaction')
 .d3-Interaction{
 display: flex;
 flex-direction: column;
-transform: scale(0.6);
+transform: scale(0.5);
 h1{
   font-weight: 800;
   font-size: 2em;
