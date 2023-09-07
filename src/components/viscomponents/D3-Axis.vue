@@ -22,7 +22,7 @@ onMounted(() => {
 .d3-axis{
   display: flex;
   flex-direction: column;
-  transform: scale(0.5);
+  transform: scale(0.4);
   h1{
     font-weight: 800;
     font-size: 2em;
