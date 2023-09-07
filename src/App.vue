@@ -59,6 +59,7 @@ import AllFooter from './components/AllFooter.vue';
   justify-content: center;
   height: auto;
   padding: 10px;
+  z-index:99;
   .title{
   font-weight: 800;
   background-image: linear-gradient(to right , #fa0000, #e78700,#0077ff);   //最后三行为文字渐变CSS
@@ -100,6 +101,7 @@ import AllFooter from './components/AllFooter.vue';
   }
   .box{
   height: 6vh;
+  z-index: 99;
 }
   .fixed{
   position: fixed;
@@ -117,6 +119,7 @@ import AllFooter from './components/AllFooter.vue';
   justify-content: center;
   flex-direction: row;
   background-color: white;
+  z-index:99;
   .title{
   margin-right: 15px;
   font-weight: 800;

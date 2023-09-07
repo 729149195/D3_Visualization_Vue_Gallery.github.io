@@ -22,6 +22,7 @@ onMounted(() => {
 .d3-axis{
   display: flex;
   flex-direction: column;
+  transform: scale(0.6);
   h1{
     font-weight: 800;
     font-size: 2em;
@@ -34,6 +35,34 @@ onMounted(() => {
   align-items: center;
   justify-content: center;
   padding: 10px;
+  svg{
+    border: 1px solid #222;
+    border-radius: 10px;
+  }
+}
+}
+@media (min-width: 1024px) {
+  .d3-axis{
+  display: flex;
+  flex-direction: column;
+  transform: scale(1);
+  h1{
+    font-weight: 800;
+    font-size: 2em;
+    text-align: left;
+    font-family:monospace;
+  }
+  .content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+svg{
+    border: 1px solid #222;
+    border-radius: 10px;
+  }
 }
 }
 </style>
