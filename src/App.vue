@@ -11,7 +11,7 @@ import AllFooter from './components/AllFooter.vue';
        <div class="fixed">
       <el-header>
         <RouterLink to="/" class="logo"><img src="../public/favicon.ico"></RouterLink>
-        <span class="title">D3 CBBV</span> 
+        <span class="title">DVVG</span> 
         <nav>
           <RouterLink to="/vis/info"><el-button round :icon="Menu">Vis Show</el-button></RouterLink>
           <el-divider direction="vertical" />
@@ -34,7 +34,7 @@ import AllFooter from './components/AllFooter.vue';
       <el-main>
         <RouterView/>
       </el-main>
-      <el-divider content-position="right" class="three-divider">D3 CBBV v1.0</el-divider>
+      <el-divider content-position="right" class="three-divider">DVVG v1.0</el-divider>
       <el-footer>
         <AllFooter/>
       </el-footer>

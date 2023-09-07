@@ -1,8 +1,8 @@
 <template>
     <div class="d3-info">
-      <h1>The D3.js Cases</h1>
-      <h1> Buided By</h1>
-      <h1> Vue3 + Vite</h1>
+      <h1>D3 Visualization</h1>
+      <h1>Vue</h1>
+      <h1>Gallery</h1>
     </div>
 </template>
   
@@ -37,7 +37,7 @@ onMounted(() => {
     background-image: linear-gradient(to right ,#0077ff , #e78700,#fa0000);   //最后三行为文字渐变CSS
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 1em;
+    font-size: 3em;
     text-align: center;
   }
   :nth-child(3){
@@ -45,7 +45,7 @@ onMounted(() => {
     background-image: linear-gradient(to right , #fa0000, #e78700,#0077ff);   //最后三行为文字渐变CSS
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 2em;
+    font-size: 3em;
     text-align: center;
   }
 
@@ -66,22 +66,25 @@ onMounted(() => {
     -webkit-text-fill-color: transparent;
     font-size: 5em;
     text-align: center;
+    margin: 0px;
   }
   :nth-child(2){
     font-weight: 800;
     background-image: linear-gradient(to right ,#0077ff , #e78700,#fa0000);   //最后三行为文字渐变CSS
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 2em;
+    font-size: 5em;
     text-align: center;
+    margin: 0px;
   }
   :nth-child(3){
     font-weight: 800;
     background-image: linear-gradient(to right , #fa0000, #e78700,#0077ff);   //最后三行为文字渐变CSS
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 4em;
+    font-size: 5em;
     text-align: center;
+    margin: 0px;
   }
 
 }
