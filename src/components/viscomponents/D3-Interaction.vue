@@ -5,7 +5,7 @@
   <div class="d3-Interaction">
     <h1>d3-hierarchy</h1>
     <div class="content">
-      <svg width="600" height="600"></svg>
+      <svg width="60vw" height="60vw"></svg>
       <code></code>
       <p>tables</p>
     </div>
@@ -25,10 +25,9 @@ d3.select('.d3-Interaction')
 .d3-Interaction{
 display: flex;
 flex-direction: column;
-transform: scale(0.4);
 h1{
   font-weight: 800;
-  font-size: 2em;
+  font-size: 5vw;
   text-align: left;
   font-family:monospace;
 }
@@ -48,10 +47,9 @@ svg{
 .d3-Interaction{
 display: flex;
 flex-direction: column;
-transform: scale(1);
 h1{
   font-weight: 800;
-  font-size: 2em;
+  font-size: 3vw;
   text-align: left;
   font-family:monospace;
 }

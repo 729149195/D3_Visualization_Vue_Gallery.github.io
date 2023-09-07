@@ -17,5 +17,5 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
 
 # 如果你要部署在 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:729149195/D3_Visualization_Vue_Gallery.github.io.git master
-# git push
+# git push -f git@github.com:729149195/D3_Visualization_Vue_Gallery.github.io.git master
+git push
