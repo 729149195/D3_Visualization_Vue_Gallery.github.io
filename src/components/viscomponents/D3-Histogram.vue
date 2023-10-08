@@ -1,9 +1,9 @@
 <template>
   <div class="d3-histogram">
     <h1>Histogram</h1>
-    <p>直方图通过将连续值分组为离散的二进制，将一维分布可视化。本示例显示了截至 2016 年 8 月美国各县的失业率。数据： 劳工统计局</p>
+    <p></p>
     <div class="content">
-      <svg id="chart" width="60vw" height="60vw"></svg>
+      <svg id="chart" width="80vw" height="60vw"></svg>
     </div>
   </div>
 </template>
@@ -16,9 +16,10 @@ onMounted(() => {
   fetch('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json')
     .then(response => response.json())
     .then(data => {
-      data = data.data.slice(0, 50)
+      d3.select("p").text(data.description).append("p").text("FROM: "+data.from_date+" ~ TO: "+data.to_date)
+      data = data.data
       // console.log(data)
-      const margin = { top: 20, right: 30, bottom: 50, left: 60 };
+      const margin = { top: 20, right: 10, bottom: 60, left: 40 };
       const svg = d3.select("#chart");
 
       function updateChart() {
@@ -44,16 +45,19 @@ onMounted(() => {
         chart.selectAll(".bar")
           .data(data)
           .enter().append("rect")
-          .attr("class", "bar")
           .attr("x", d => x(d[0]))
           .attr("y", d => y(d[1]))
           .attr("width", x.bandwidth())
           .attr("height", d => height - y(d[1]))
           .attr("fill", "#4caf50")
-          .attr("rx", 5)
-          .attr("ry", 5);
+          .attr("rx", 2)
+          .attr("ry", 2)
+          .attr("class", "bar")
+          .append("title")
+          .text((d) => { d })
 
         const xAxis = d3.axisBottom(x)
+          .tickValues(x.domain().filter((d, i) => i % 8   === 0)) // 仅显示每隔一个刻度
           .tickSizeOuter(0);
 
         const yAxis = d3.axisLeft(y)
@@ -75,16 +79,18 @@ onMounted(() => {
           .attr("stroke-dasharray", "2,2")
           .attr("stroke", "#ccc");
       }
-
       window.addEventListener("resize", updateChart);
       updateChart();
-
     })
 })
 
 </script>
 
 <style scoped lang="scss">
+.bat:hover {
+  fill: red;
+}
+
 .d3-histogram {
   display: flex;
   flex-direction: column;
@@ -102,7 +108,6 @@ onMounted(() => {
     align-items: center;
     justify-content: center;
     padding: 10px;
-
   }
 }
 
@@ -125,8 +130,6 @@ onMounted(() => {
       justify-content: center;
       padding: 10px;
     }
-
-
   }
 }
 </style>
