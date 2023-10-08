@@ -8,7 +8,6 @@ import AllFooter from './components/AllFooter.vue';
   <div class="App-View">
     <el-container>
       <div class="box">
-       <div class="fixed">
       <el-header>
         <RouterLink to="/" class="logo"><img src="../public/favicon.ico"></RouterLink>
         <span class="title">DVVG</span> 
@@ -29,7 +28,7 @@ import AllFooter from './components/AllFooter.vue';
       <el-icon><Opportunity color="orange"/></el-icon>
       <el-icon><Opportunity color="blue"/></el-icon>
     </el-divider>
-    </div>
+
   </div>
       <el-main>
         <RouterView/>
@@ -48,10 +47,7 @@ import AllFooter from './components/AllFooter.vue';
 .el-button{
     font-size: 14px;
   }
-.fixed{
-  position:relative;
-  width: 100%;
-}
+
 .el-header{
   display: flex;
   flex-direction: column;
@@ -59,7 +55,6 @@ import AllFooter from './components/AllFooter.vue';
   justify-content: center;
   height: auto;
   padding: 10px;
-  z-index:99;
   .title{
   font-weight: 800;
   background-image: linear-gradient(to right , #fa0000, #e78700,#0077ff);   //最后三行为文字渐变CSS
@@ -103,10 +98,7 @@ import AllFooter from './components/AllFooter.vue';
   height: 6vh;
   z-index: 99;
 }
-  .fixed{
-  position: fixed;
-  width: 100%;
-}
+
 .logo{
   width: 40px;
   height: 40px;
@@ -119,7 +111,6 @@ import AllFooter from './components/AllFooter.vue';
   justify-content: center;
   flex-direction: row;
   background-color: white;
-  z-index:99;
   .title{
   margin-right: 15px;
   font-weight: 800;

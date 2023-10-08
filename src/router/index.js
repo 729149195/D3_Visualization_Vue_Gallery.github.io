@@ -16,9 +16,9 @@ const router = createRouter({
         component: () => import('../components/viscomponents/D3-Info.vue')
       },  
       {
-        path: '/vis/d3-axis',
-        name: 'axis',
-        component: () => import('../components/viscomponents/D3-Axis.vue')
+        path: '/vis/d3-histogram',
+        name: 'histogram',
+        component: () => import('../components/viscomponents/D3-Histogram.vue')
       },
       {
         path: '/vis/d3-chord',

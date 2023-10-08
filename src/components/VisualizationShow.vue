@@ -8,7 +8,7 @@
     :size="size"
     >
       <nav>
-          <RouterLink to="/vis/d3-axis" @click="drawer = false"><el-button>axis</el-button></RouterLink>
+          <RouterLink to="/vis/d3-histogram" @click="drawer = false"><el-button>histogram</el-button></RouterLink>
           <el-divider direction="vertical" />
           <RouterLink to="/vis/d3-chord" @click="drawer = false"><el-button>chord</el-button></RouterLink>
           <el-divider direction="vertical" />
@@ -62,7 +62,7 @@
     <div class="content">
       <el-card class="left">
         <nav>
-          <RouterLink to="/vis/d3-axis"><el-button>axis</el-button></RouterLink>
+          <RouterLink to="/vis/d3-histogram"><el-button>histogram</el-button></RouterLink>
           <el-divider direction="vertical" />
           <RouterLink to="/vis/d3-chord"><el-button>chord</el-button></RouterLink>
           <el-divider direction="vertical" />
