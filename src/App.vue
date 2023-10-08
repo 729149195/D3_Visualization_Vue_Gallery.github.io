@@ -12,9 +12,9 @@ import AllFooter from './components/AllFooter.vue';
         <RouterLink to="/" class="logo"><img src="../public/favicon.ico"></RouterLink>
         <span class="title">DVVG</span> 
         <nav>
-          <RouterLink to="/vis/info"><el-button round :icon="Menu">Vis Show</el-button></RouterLink>
+          <RouterLink to="/vis/info"><el-button round :icon="Menu">D3 cases</el-button></RouterLink>
           <el-divider direction="vertical" />
-          <RouterLink to="/papers"><el-button round :icon="StarFilled">Papers</el-button></RouterLink>
+          <RouterLink to="/VisShow"><el-button round :icon="StarFilled">Vis show</el-button></RouterLink>
           <el-divider direction="vertical" />
           <RouterLink to="/aboutme"><el-button round :icon="UserFilled">About Me</el-button></RouterLink>
       </nav>

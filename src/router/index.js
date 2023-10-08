@@ -143,9 +143,9 @@ const router = createRouter({
     ]
     },
     {
-      path: '/papers',
-      name: 'papers',
-      component: () => import('../views/PapersView.vue')
+      path: '/VisShow',
+      name: 'VisShow',
+      component: () => import('../views/VisShowView.vue')
     },
     {
       path: '/aboutme',
