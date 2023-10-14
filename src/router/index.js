@@ -21,9 +21,9 @@ const router = createRouter({
         component: () => import('../components/viscomponents/D3-Histogram.vue')
       },
       {
-        path: '/vis/d3-chord',
-        name: 'chord',
-        component: () => import('../components/viscomponents/D3-Chord.vue')
+        path: '/vis/d3-MLKGMV',
+        name: 'MLKGMV',
+        component: () => import('../components/viscomponents/D3-MLKGMV.vue')
       },
       {
         path: '/vis/d3-color',

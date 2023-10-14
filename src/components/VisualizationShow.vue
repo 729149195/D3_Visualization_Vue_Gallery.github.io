@@ -10,7 +10,7 @@
       <nav>
           <RouterLink to="/vis/d3-histogram" @click="drawer = false"><el-button>histogram</el-button></RouterLink>
           <el-divider direction="vertical" />
-          <RouterLink to="/vis/d3-chord" @click="drawer = false"><el-button>chord</el-button></RouterLink>
+          <RouterLink to="/vis/d3-MLKGMV" @click="drawer = false"><el-button>MLKGMV</el-button></RouterLink>
           <el-divider direction="vertical" />
           <RouterLink to="/vis/d3-color" @click="drawer = false"><el-button>color</el-button></RouterLink>
           <el-divider direction="vertical" />
@@ -64,7 +64,7 @@
         <nav>
           <RouterLink to="/vis/d3-histogram"><el-button>histogram</el-button></RouterLink>
           <el-divider direction="vertical" />
-          <RouterLink to="/vis/d3-chord"><el-button>chord</el-button></RouterLink>
+          <RouterLink to="/vis/d3-MLKGMV"><el-button>MLKGMV</el-button></RouterLink>
           <el-divider direction="vertical" />
           <RouterLink to="/vis/d3-color"><el-button>color</el-button></RouterLink>
           <el-divider direction="vertical" />
