@@ -34,9 +34,9 @@ onMounted(() => {
   ];
 
   const data_class = [
-    ["DATA", 1, "2em", 1, 1],
-    ["VIS", 2, "7em", 3, 4.5],
-    ["USER", 3, "7em", 9, 10.9]
+    ["DATA", 1, 25, 1.1, 1.1],
+    ["VIS", 2, 100, 3.2, 4.5],
+    ["USER", 3, 100, 9, 10.9]
   ]
 
   const data_circle = [
@@ -49,8 +49,6 @@ onMounted(() => {
     [6, 0, 5], [6, 1, 1], [6, 3, 3], [6, 4, 2], [6, 6, 1],
   ]
 
-  const margin = { top: 45, right: 45, bottom: 45, left: 45 };
-
   const svg = d3.select("#chart")
 
   //创建灰色条带用以区分三类VIS
@@ -58,10 +56,10 @@ onMounted(() => {
     .data(data_class)
     .enter().append("rect")
     .attr("class", "gray_background")
-    .attr("y", d => { return d[3] * 20 + 160 })
+    .attr("y", d => { return d[3] * 20 + 160})
     .attr("x", d => d[1] + 72)
     .attr("width", 120)
-    .attr("height", d => d[2])
+    .attr("height", d => {return d[2] + 10})
     .attr("fill", "rgb(227, 234, 243)")
     .text(d => d[1])
 
@@ -69,8 +67,8 @@ onMounted(() => {
     .data(data_class)
     .enter().append("text")
     .attr("class", "text_gray")
-    .attr("y", d => { return d[4] * 20 + 225 })
-    .attr("x", d => d[1] + 10)
+    .attr("y", d => { return d[4] * 20 + 225})
+    .attr("x", d => d[1] + 12)
     .attr("transform", d => { return "rotate(-90, " + (d[1] + 25) + ", " + (d[4] * 20 + 183) + ")" })
     .text(d => d[0])
 
@@ -99,9 +97,9 @@ onMounted(() => {
     .enter()
     .append("foreignObject") // 允许在svg中使用html
     .attr("class", "text_left_blue")
-    .attr("y", (d, i) => { return i * 42 + 180 })
-    .attr("x", 75)
-    .attr("width", 120)
+    .attr("y", (d, i) => { return i * 41 + 184 })
+    .attr("x", 80)
+    .attr("width", 110)
     .attr("height", "2em")
     .append("xhtml:div")
     .style("display", "flex")
