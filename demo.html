@@ -9,13 +9,13 @@
 </head>
 
 <body>
-    <svg id="paper_chart" width="100%" height="800"></svg>
+    <svg id="chart" width="600" height="600"></svg>
 </body>
 
 </html>
 
 <script>
-    const data_blue = [
+    const data_orange = [
         ["Classification", 44],
         ["Regression", 25],
         ["Generative", 13],
@@ -25,7 +25,7 @@
         ["Semi supervised", 2]
     ];
 
-    const data_orange = [
+    const data_blue = [
         ["Data Processing4VIS", 6, 0],
         ["Data-VIS Mapping", 16, 1],
         ["Insight Communication", 4, 1],
@@ -35,38 +35,205 @@
         ["VIS Interaction", 9, 2]
     ];
 
+    const data_class = [
+        ["DATA", 1, "2em", 1, 1],
+        ["VIS", 2, "7em", 3, 4.5],
+        ["USER", 3, "7em", 9, 10.9]
+    ]
+
     const margin = { top: 45, right: 45, bottom: 45, left: 45 };
-    const width = 600;
-    const height = 600;
 
-    const svg = d3.select("#paper_chart")
-        .attr("width", width)
-        .attr("height", height);
+    const svg = d3.select("#chart")
 
+    //创建灰色条带用以区分三类VIS
+    svg.selectAll("gray_background")
+        .data(data_class)
+        .enter().append("rect")
+        .attr("class", "gray_background")
+        .attr("y", (d, i) => { return d[3] * 20 + 160 })
+        .attr("x", (d, i) => d[1] + 72)
+        .attr("width", 120)
+        .attr("height", d => d[2])
+        .text(d => d[1])
+
+    svg.selectAll(".text_gray")
+        .data(data_class)
+        .enter().append("text")
+        .attr("class", "text_gray")
+        .attr("y", (d, i) => { return d[4] * 20 + 225 })
+        .attr("x", (d, i) => d[1] + 10)
+        .attr("transform", (d, i) => { return "rotate(-90, " + (d[1] + 25) + ", " + (d[4] * 20 + 183) + ")" })
+        .text(d => d[0])
+
+    //生成蓝色柱状图及其横坐标文字
     svg.selectAll(".bar_blue")
         .data(data_blue)
         .enter().append("rect")
         .attr("class", "bar_blue")
-        .attr("x", (d, i) => { return i * 30 })
-        .attr("y", 0)
-        .attr("width", 25)
-        .attr("height", (d, i) => d[1])
-        .attr("fill", "blue")
+        .attr("y", (d, i) => { return i * 39 + 185 })
+        .attr("x", 480)
+        .attr("width", (d, i) => d[1] * 2)
+        .attr("height", 30)
 
+    svg.selectAll(".text_blue")
+        .data(data_blue)
+        .enter().append("text")
+        .attr("class", "text_blue")
+        .attr("y", (d, i) => { return i * 39 + 205 })
+        .attr("x", d => { return d[1] * 2 + 485 })
+        .text(d => d[1])
+
+    svg.selectAll(".text_left_blue")
+        .data(data_blue)
+        .enter()
+        .append("foreignObject") // 允许在svg中使用html
+        .attr("class", "text_left_blue")
+        .attr("y", (d, i) => { return i * 42 + 180 })
+        .attr("x", 75)
+        .attr("width", 120)
+        .attr("height", "2em")
+        .append("xhtml:div")
+        .style("display", "flex")
+        .style("align-items", "center")
+        .style("justify-content", "center")
+        .style("text-align", "center")
+        .style("line-height", "1em")
+        .style("font-size", "14px")
+        .style("overflow-wrap", "break-word")
+        .text(d => d[0]);
+
+    //生成橘色条形图及其横坐标文字
     svg.selectAll(".bar_orange")
-        .data(bar_orange)
+        .data(data_orange)
         .enter().append("rect")
         .attr("class", "bar_orange")
-        .attr("x", (d, i) => { return i * 30 })
-        .attr("y", 50)
-        .attr("width", 25)
-        .attr("height", (d, i) => d[1])
-        .attr("fill", "orange")
+        .attr("x", (d, i) => { return i * 39 + 205 })
+        .attr("y", 460)
+        .attr("width", 30)
+        .attr("height", (d, i) => d[1] * 2)
 
+    svg.selectAll(".text_orange")
+        .data(data_orange)
+        .enter().append("text")
+        .attr("class", "text_orange")
+        .attr("x", (d, i) => { return i * 40 + 209 })
+        .attr("y", (d, i) => d[1] * 2 + 480)
+        .text(d => d[1])
+
+    svg.selectAll(".text_top_oeange")
+        .data(data_orange)
+        .enter().append("text")
+        .attr("class", "text_top_orange")
+        .attr("x", (d, i) => { return i * 40 + 90 })
+        .attr("y", 220)
+        .text(d => d[0])
+        .attr("font-size", "14px")
+        .attr("transform", (d, i) => { return "rotate(-45, " + (i * 40 + 100) + ", 50)" });
+
+    //生成7*7矩形表格
+    // 创建二维数组表示表格的行和列
+    var data = [];
+    for (var i = 0; i < 7; i++) {
+        var row = [];
+        for (var j = 0; j < 7; j++) {
+            row.push({ row: i, col: j });
+        }
+        data.push(row);
+    }
+
+    // 创建表格容器
+    var table = d3.select("#chart")
+
+    // 创建表格的行
+    var rows = table.selectAll(".row")
+        .data(data)
+        .enter()
+        .append("g")
+        .attr("class", "row");
+
+    // 创建表格的列
+    var cells = rows.selectAll(".cell")
+        .data(d => d)
+        .enter()
+        .append("rect")
+        .attr("class", "cell")
+        .attr("x", d => { return d.col * 39 + 200 })
+        .attr("y", d => { return d.row * 39 + 180 })
+        .attr("width", 39)
+        .attr("height", 39)
+        .style("stroke-width", "1px"); // 调整边的粗细
+
+    // 设置边框颜色
+    cells.style("stroke", "rgb(211,210,210)")
+        .style("fill", "none");
+
+    //添加粗边
+    table.append("line")//row
+        .attr("x1", 200).attr("y1", 219)
+        .attr("x2", 473).attr("y2", 219)
+    table.append("line")
+        .attr("x1", 200).attr("y1", 336)
+        .attr("x2", 473).attr("y2", 336)
+    table.append("line")//col
+        .attr("x1", 278).attr("y1", 180)
+        .attr("x2", 278).attr("y2", 453)
+    table.append("line")
+        .attr("x1", 395).attr("y1", 180)
+        .attr("x2", 395).attr("y2", 453)
+    table.append("line")
+        .attr("x1", 434).attr("y1", 180)
+        .attr("x2", 434).attr("y2", 453)
+
+    table.selectAll("line").style("stroke", "rgb(210,210,210)")
+        .style("stroke-width", "5px");
+
+    //添加圆圈和数值
+
+    cells.append("circle")
+        .attr("cx", 19.5) // 圆心的x坐标
+        .attr("cy", 19.5) // 圆心的y坐标
+        .attr("r", 15) // 圆的半径
+        .style("fill", "red")
+        .style("stroke", "black") // 圆圈边的颜色为黑色
+        .style("stroke-width", "1px"); // 圆圈边的粗细
+
+    // 在圆圈内显示数值
+    cells.append("text")
+        .attr("x", 19.5) // 文本的x坐标
+        .attr("y", 19.5) // 文本的y坐标
+        .attr("dy", "0.35em")
+        .attr("text-anchor", "middle")
+        .style("fill", "white") // 文本的颜色为白色
+        .style("font-size", "12px") // 文本的字体大小
+        .text(d => d.value.toFixed(2)); // 显示数值，这里使用示例数据的值
 </script>
 
 <style>
-    .bar {
-        fill: steelblue;
+    .bar_blue {
+        fill: rgb(102, 156, 201);
+    }
+
+    .text_blue {
+        fill: rgb(102, 156, 201);
+    }
+
+    .bar_blue:hover {
+        fill: rgb(47, 136, 209);
+    }
+
+    .bar_orange {
+        fill: rgb(220, 144, 86);
+    }
+
+    .text_orange {
+        fill: rgb(220, 144, 86);
+    }
+
+    .bar_orange:hover {
+        fill: rgb(218, 119, 43);
+    }
+
+    .gray_background {
+        fill: rgb(227, 234, 243);
     }
 </style>
