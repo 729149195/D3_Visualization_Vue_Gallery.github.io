@@ -12,7 +12,8 @@
 import * as d3 from 'd3'
 import { onMounted } from 'vue';
 onMounted(() => {
-  d3.select("p").text("MLKGMV (Machine Learning Knowledge Graph Multi-View)").append("p").text("《A Survey on ML4VIS: Applying Machine Learning Advances to Data Visualization》P11")
+  d3.select("p").text("MLKGMV (Machine Learning Knowledge Graph Multi-View)").append("p").text("IN《A Survey on ML4VIS: Applying Machine Learning Advances to Data Visualization》P11")
+  .append("p").text("Each row is a visualization process and each column is an MLtask. In each cell, the number and the grayscale indicate the number ofpapers. The height of the bar indicates the number of studies related to atype of ML task (blue bar) or a visualization process (orange bar). Notethat the number on a bar can be smaller than the sum of the numbers inthe corresponding row/column, because some papers involve multiplelearning tasks or visualization processes.")
   const data_orange = [
     ["Classification", 44],
     ["Regression", 25],
